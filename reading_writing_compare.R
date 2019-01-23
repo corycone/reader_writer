@@ -7,7 +7,7 @@ r_comp_15[is.na(r_comp_15)] <- 0
 
 ggplot(r_comp_15, aes(x = Date, y = minutes)) +
   geom_line(col = "red") +
-  theme_light() +
+  theme_minimal() +
   labs(title = "Reading vs Writing - 2015 | K. Edwin Fritz", 
        x = "Minutes", 
        y = "Month",
@@ -24,5 +24,5 @@ ggplot(r_comp_15, aes(x = Date, y = minutes)) +
         plot.caption=element_text(size = 7, color = "#151515"),
         legend.position="right",
         plot.margin = margin(1,1,1,1, "cm")) +
-  scale_x_date(date_breaks = "months")
+  scale_x_date(date_breaks = "1 month", date_minor_breaks = "1 week", date_labels = "%B")
 
