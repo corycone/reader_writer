@@ -44,8 +44,8 @@ p <- ggplot(r_comp_15, aes(x=day, y = minutes/60, fill = Month)) +
         legend.position="none",
         plot.margin = margin(1,1,1,1, "cm")) +
   theme(strip.background =element_rect(fill="White")) +
-  theme(strip.text = element_text(colour = "black", size = 9))
-
+  theme(strip.text = element_text(colour = "black", size = 9)) +
+  
 p2 <- ggplot(r_comp_16, aes(x=day, y = minutes/60, fill = Month)) +
   scale_fill_brewer(palette = "Set3") +
   geom_area() +
@@ -99,5 +99,17 @@ p4 <- ggplot(r_comp_18, aes(x=day, y = minutes/60, fill = Month)) +
         plot.margin = margin(1,1,1,1, "cm")) +
   theme(strip.background =element_rect(fill="White")) +
   theme(strip.text = element_text(colour = "black", size = 9))
+
+#donut days of the week - in progress
+#r_donut <- r_comp
+#r_donut[is.na(r_donut)] <- 0
+#r_donut$Weekday = factor(r_donut$Weekday, 
+ #                        levels = c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))
+#
+#r_weekday_mean <- aggregate(r_donut[, 3], list(r_donut$Weekday), mean)
+#colnames(r_weekday_mean)[2] <- "Avg. Minutes"
+#r_weekday_mean$`Avg. Minutes` = round(r_weekday_mean$`Avg. Minutes`, digits = 2)
+#r_weekday_mean
+
 
 grid.arrange(p, p2, p3, p4, nrow = 4, ncol=1, top = "The Reading Habits of Horror Writer K. Edwin Fritz, 2015-2018")
