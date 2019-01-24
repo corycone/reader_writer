@@ -44,3 +44,4 @@ g_theme <- theme_light() +
         panel.grid = element_blank(),
         legend.position="none",
         plot.margin = margin(1,1,1,1, "cm"))
+

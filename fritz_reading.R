@@ -2,7 +2,10 @@ library(xlsx)
 library(ggplot2)
 library(gridExtra)
 
+#load data
 r_comp <- read.xlsx("data/all_reading.xlsx", sheetName = "all_reading")
+
+#run data prep scripts (facets, theme, some math)
 source("fritz_reading_prep.R")
 
 #2015 Reading
@@ -15,7 +18,7 @@ p <- ggplot(r_comp_15, aes(x=day, y = minutes/60, fill = Month)) +
        y = "Hours",
        caption = "Source: Fritz") +
   g_theme +
-  theme(strip.background =element_rect(fill="White")) +
+  theme(strip.background =element_rect(fill="white")) +
   theme(strip.text = element_text(colour = "black", size = 9))
 
 #2016 Reading  
@@ -28,7 +31,7 @@ p2 <- ggplot(r_comp_16, aes(x=day, y = minutes/60, fill = Month)) +
        y = "Hours",
        caption = "Source: Fritz") +
   g_theme +
-  theme(strip.background =element_rect(fill="White")) +
+  theme(strip.background =element_rect(fill="white")) +
   theme(strip.text = element_text(colour = "black", size = 9))
 
 #2017 Reading
@@ -41,7 +44,7 @@ p3 <- ggplot(r_comp_17, aes(x=day, y = minutes/60, fill = Month)) +
        y = "Hours",
        caption = "Source: Fritz") +
   g_theme +
-  theme(strip.background =element_rect(fill="White")) +
+  theme(strip.background =element_rect(fill="white")) +
   theme(strip.text = element_text(colour = "black", size = 9))
 
 #2018 Reading
@@ -54,13 +57,13 @@ p4 <- ggplot(r_comp_18, aes(x=day, y = minutes/60, fill = Month)) +
        y = "Hours",
        caption = "Source: Fritz") +
   g_theme +
-  theme(strip.background =element_rect(fill="White")) +
+  theme(strip.background =element_rect(fill="white")) +
   theme(strip.text = element_text(colour = "black", size = 9))
 
 #Average reading by Weekday
-p_avg <- ggplot(r_weekday_mean, aes(x = Weekday, y = `Avg. Minutes`, Fill = "Green")) +
-  #scale_color_brewer(palette = "Set3") +
+p_avg <- ggplot(r_weekday_mean, aes(x = Weekday, y = `Avg. Minutes`, fill = Weekday)) +
   geom_bar(stat = "identity") +
+  scale_fill_brewer(palette = "Set3") +
   labs(title = "Average Minutes Read by Weekday | 2015 - 2018", 
        x = "Day of the Week", 
        y = "Average Minutes Read") +
