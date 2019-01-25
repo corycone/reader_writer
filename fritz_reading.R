@@ -72,4 +72,4 @@ p_avg <- ggplot(r_weekday_mean, aes(x = Weekday, y = `Avg. Minutes`, fill = Week
 #arrange all plots
 final <- grid.arrange(p_avg, p, p2, p3, p4, nrow = 5, ncol=1, top = "The Reading Habits of Horror Writer K. Edwin Fritz, 2015-2018")
 
-ggsave("inprogress.png", final , width = 12, height = 30)
+ggsave("inprogress.png", final , width = 12, height = 30, dpi = 300)
