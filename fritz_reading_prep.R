@@ -1,3 +1,6 @@
+#load fonts
+loadfonts(device = "win")
+
 #subset and facet 2015
 r_comp_15 <- subset(r_comp, Year == "2015")
 r_comp_15[is.na(r_comp_15)] <- 0
@@ -37,7 +40,7 @@ r_weekday_mean$`Avg. Minutes` = round(r_weekday_mean$`Avg. Minutes`, digits = 2)
 
 #ggplot unified theme
 
-g_theme <- theme_light() +
+g_theme <- theme_light(base_family = 'Georgia') +
   theme(panel.border = element_blank(),
         axis.ticks.x = element_blank(),
         axis.ticks.y = element_blank(),
