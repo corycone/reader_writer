@@ -1,5 +1,4 @@
 #load fonts
-loadfonts(device = "win")
 
 #subset and facet 2015
 r_comp_15 <- subset(r_comp, Year == "2015")
