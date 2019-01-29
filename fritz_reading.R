@@ -1,5 +1,6 @@
 library(xlsx)
 library(ggplot2)
+library(dplyr)
 library(gridExtra)
 
 #load data
@@ -9,7 +10,7 @@ r_comp <- read.xlsx("data/all_reading.xlsx", sheetName = "all_reading")
 source("fritz_reading_prep.R")
 
 #2015 Reading
-p <- ggplot(r_comp_15, aes(x=day, y = minutes/60, fill = Month)) +
+p <- ggplot(r_years$`2015`, aes(x=day, y = minutes/60, fill = Month)) +
   scale_fill_brewer(palette = "Set3") +
   geom_area() +
   facet_wrap(~facet, strip.position = "bottom") +
@@ -22,7 +23,7 @@ p <- ggplot(r_comp_15, aes(x=day, y = minutes/60, fill = Month)) +
   theme(strip.text = element_text(colour = "black", size = 9))
 
 #2016 Reading  
-p2 <- ggplot(r_comp_16, aes(x=day, y = minutes/60, fill = Month)) +
+p2 <- ggplot(r_years$`2016`, aes(x=day, y = minutes/60, fill = Month)) +
   scale_fill_brewer(palette = "Set3") +
   geom_area() +
   facet_wrap(~facet, strip.position = "bottom") +
@@ -35,7 +36,7 @@ p2 <- ggplot(r_comp_16, aes(x=day, y = minutes/60, fill = Month)) +
   theme(strip.text = element_text(colour = "black", size = 9))
 
 #2017 Reading
-p3 <- ggplot(r_comp_17, aes(x=day, y = minutes/60, fill = Month)) +
+p3 <- ggplot(r_years$`2017`, aes(x=day, y = minutes/60, fill = Month)) +
   scale_fill_brewer(palette = "Set3") +
   geom_area() +
   facet_wrap(~facet, strip.position = "bottom") +
@@ -48,7 +49,7 @@ p3 <- ggplot(r_comp_17, aes(x=day, y = minutes/60, fill = Month)) +
   theme(strip.text = element_text(colour = "black", size = 9))
 
 #2018 Reading
-p4 <- ggplot(r_comp_18, aes(x=day, y = minutes/60, fill = Month)) +
+p4 <- ggplot(r_years$`2018`, aes(x=day, y = minutes/60, fill = Month)) +
   scale_fill_brewer(palette = "Set3") +
   geom_area() +
   facet_wrap(~facet, strip.position = "bottom") +
