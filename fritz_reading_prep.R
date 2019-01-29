@@ -21,9 +21,13 @@ r_weekday_mean$`Avg. Minutes` = round(r_weekday_mean$`Avg. Minutes`, digits = 2)
 
 g_theme <- theme_light() +
   theme(panel.border = element_blank(),
+        panel.background = element_rect(fill = "#F3F7F7"),
+        plot.background = element_rect(fill = "#F3F7F7", colour = "#F3F7F7"),
         axis.ticks.x = element_blank(),
         axis.ticks.y = element_blank(),
         panel.grid = element_blank(),
         legend.position="none",
-        plot.margin = margin(1,1,1,1, "cm"))
+        plot.margin = margin(1,1,1,1, "cm")) +
+  theme(strip.background =element_rect(fill="#F3F7F7")) +
+  theme(strip.text = element_text(colour = "black", size = 9))
 
