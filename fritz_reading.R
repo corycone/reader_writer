@@ -58,8 +58,17 @@ p_avg <- ggplot(r_weekday_mean, aes(x = Weekday, y = `Avg. Minutes`, fill = Week
        y = "Average Minutes Read") +
   g_theme
 
-#arrange all plots
-final <- grid.arrange(p_avg, p, p2, p3, p4, nrow = 5, ncol=1)
+#Average reading by Month
+p_month_avg <- ggplot(r_month_mean, aes(x = Month, y = `Avg. Minutes`, fill = Month)) +
+  scale_fill_brewer(palette = "Paired") +
+  geom_bar(stat = "identity") +
+  labs(title = "Average Minutes Read by Month | 2015 - 2018", 
+       x = "Month", 
+       y = "Average Minutes Read") +
+  g_theme
 
-ggsave("inprogress.png", final , width = 12, height = 30, dpi = 300)
+#arrange all plots
+final <- grid.arrange(p_month_avg, p_avg, p, p2, p3, p4, nrow = 3, ncol=2)
+
+ggsave("inprogress.png", final , width = 24, height = 30, dpi = 300)
 
