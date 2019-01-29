@@ -1,27 +1,9 @@
-#subset and facet 2015
-r_comp_15 <- subset(r_comp, Year == "2015")
-r_comp_15[is.na(r_comp_15)] <- 0
-r_comp_15$facet = factor(r_comp_15$Month, 
-                         levels = c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"))
-
-#subset and facet 2016
-r_comp_16 <- subset(r_comp, Year == "2016")
-r_comp_16[is.na(r_comp_16)] <- 0
-r_comp_16$facet = factor(r_comp_16$Month, 
-                         levels = c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"))
-
-#subset and facet 2017
-r_comp_17 <- subset(r_comp, Year == "2017")
-r_comp_17[is.na(r_comp_17)] <- 0
-r_comp_17$facet = factor(r_comp_17$Month, 
-                         levels = c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"))
-
-#subset and facet 2018
-r_comp_18 <- subset(r_comp, Year == "2018")
-r_comp_18[is.na(r_comp_18)] <- 0
-r_comp_18$facet = factor(r_comp_18$Month, 
-                         levels = c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"))
-
+#order by month
+r_comp[is.na(r_comp)] <- 0
+r_comp$facet = factor(r_comp$Month, 
+                      levels = c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"))
+#split data by year
+r_years <- split(r_comp, as.factor(r_comp$Year))
 
 #bar averages
 r_avg <- r_comp
