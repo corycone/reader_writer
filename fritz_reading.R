@@ -11,8 +11,9 @@ source("fritz_reading_prep.R")
 
 #2015 Reading
 p <- ggplot(r_years$`2015`, aes(x=day, y = minutes/60, fill = Month)) +
-  geom_area() +
-  facet_wrap(~facet, strip.position = "bottom") +
+  geom_area(fill = fill_color) +
+  scale_y_reverse() +
+  facet_wrap(~facet, strip.position = "top") +
   labs(title = "2015",
        x = "Day of the Month", 
        y = "Hours",
@@ -21,8 +22,9 @@ p <- ggplot(r_years$`2015`, aes(x=day, y = minutes/60, fill = Month)) +
 
 #2016 Reading  
 p2 <- ggplot(r_years$`2016`, aes(x=day, y = minutes/60, fill = Month)) +
-  geom_area() +
-  facet_wrap(~facet, strip.position = "bottom") +
+  geom_area(fill = fill_color) +
+  scale_y_reverse() +
+  facet_wrap(~facet, strip.position = "top") +
   labs(title = "2016", 
        x = "Day of the Month", 
        y = "Hours",
@@ -31,8 +33,9 @@ p2 <- ggplot(r_years$`2016`, aes(x=day, y = minutes/60, fill = Month)) +
 
 #2017 Reading
 p3 <- ggplot(r_years$`2017`, aes(x=day, y = minutes/60, fill = Month)) +
-  geom_area() +
-  facet_wrap(~facet, strip.position = "bottom") +
+  geom_area(fill = fill_color) +
+  scale_y_reverse() +
+  facet_wrap(~facet, strip.position = "top") +
   labs(title = "2017", 
        x = "Day of the Month", 
        y = "Hours",
@@ -40,9 +43,10 @@ p3 <- ggplot(r_years$`2017`, aes(x=day, y = minutes/60, fill = Month)) +
   g_theme
 
 #2018 Reading
-p4 <- ggplot(r_years$`2018`, aes(x=day, y = minutes/60, fill = Month)) +
-  geom_area() +
-  facet_wrap(~facet, strip.position = "bottom") +
+p4 <- ggplot(r_years$`2018`, aes(x=day, y = minutes/60)) +
+  geom_area(fill = fill_color) +
+  scale_y_reverse() +
+  facet_wrap(~facet, strip.position = "top") +
   labs(title = "2018", 
        x = "Day of the Month", 
        y = "Hours",
@@ -51,7 +55,7 @@ p4 <- ggplot(r_years$`2018`, aes(x=day, y = minutes/60, fill = Month)) +
 
 #Average reading by Weekday
 p_avg <- ggplot(r_weekday_mean, aes(x = Weekday, y = `Avg. Minutes`, fill = Weekday)) +
-  scale_fill_brewer(palette = "Paired") +
+  #scale_fill_brewer(palette = "Paired") +
   geom_bar(stat = "identity") +
   labs(title = "Average Minutes Read by Weekday | 2015 - 2018", 
        x = "Day of the Week", 

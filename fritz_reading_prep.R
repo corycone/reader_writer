@@ -1,3 +1,5 @@
+fill_color <- "red"
+
 #order by month
 r_comp[is.na(r_comp)] <- 0
 r_comp$facet = factor(r_comp$Month, 
@@ -42,6 +44,6 @@ g_theme <- theme_light() +
         legend.position="none",
         plot.margin = margin(1,1,1,1, "cm")) +
   theme(strip.background =element_rect(fill="#F3F7F7")) +
-  theme(strip.text = element_text(colour = "black", size = 9)) +
-  scale_fill_brewer(palette = "Paired")
+  theme(strip.text = element_text(colour = "black", size = 9)) #+
+  #scale_fill_brewer(palette = "Paired")
 
