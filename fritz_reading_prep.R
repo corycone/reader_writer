@@ -1,7 +1,10 @@
+#font
+
+
 #colors
 fill_color <- "red"
 color_color <- "darkred"
-text_color <- "white"
+text_color <- "#161616"
 
 #order by month
 r_comp[is.na(r_comp)] <- 0
@@ -39,20 +42,44 @@ r_month_mean$`Avg. Minutes` = round(r_month_mean$`Avg. Minutes`, digits = 2)
 
 g_theme <- theme_light() +
   theme(panel.border = element_blank(),
-        panel.background = element_rect(fill = "#374949"),
-        plot.background = element_rect(fill = "#374949", colour = "#374949"),
+        panel.background = element_rect(fill = "#DDDDDD"),
+        plot.background = element_rect(fill = "#DDDDDD", colour = "#DDDDDD"),
         axis.ticks.x = element_blank(),
         axis.ticks.y = element_blank(),
         panel.grid = element_blank(),
-        axis.text.x = element_text(colour = text_color),
-        axis.text.y = element_text(colour = text_color),
-        axis.title.x = element_text(colour = text_color),
-        axis.title.y = element_text(colour = text_color),
-        plot.title = element_text(colour = text_color, size = 35),
+        axis.text.x = element_text(colour = text_color, family = "Roboto Condensed Light"),
+        axis.text.y = element_text(colour = text_color, family = "Roboto Condensed Light"),
+        axis.title.x = element_text(colour = text_color, family = "Roboto Condensed Light"),
+        axis.title.y = element_text(colour = text_color, family = "Roboto Condensed Light"),
+        plot.title = element_text(colour = text_color, size = 35, family = "Roboto Condensed Light"),
         plot.caption = element_text(color = text_color),
         legend.position="none",
         plot.margin = margin(1,1,1,1, "cm")) +
-  theme(strip.background =element_rect(fill="#374949")) +
-  theme(strip.text = element_text(colour = text_color, size = 9)) #+
+  theme(strip.background =element_rect(fill="#DDDDDD")) +
+  theme(strip.text = element_text(colour = text_color, size = 9, family = "Roboto Condensed Light")) #+
   #scale_fill_brewer(palette = "Paired")
+
+#ggplot title them
+
+g_theme_title <- theme_light() +
+  theme(panel.border = element_blank(),
+        panel.background = element_rect(fill = "#DDDDDD"),
+        plot.background = element_rect(fill = "#DDDDDD", colour = "#DDDDDD"),
+        axis.ticks.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        panel.grid = element_blank(),
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        plot.title = element_text(colour = text_color, size = 90, face = "bold", family = "Roboto Condensed Light"),
+        plot.subtitle = element_text(colour = text_color, size = 45),
+        plot.caption = element_blank(),
+        legend.position="none",
+        plot.margin = margin(1,1,1,1, "cm")) +
+  theme(strip.background =element_rect(fill="#DDDDDD")) +
+  theme(strip.text = element_text(colour = text_color, size = 9, family = "Roboto Condensed Light")) #+
+#scale_fill_brewer(palette = "Paired")
+
+
 

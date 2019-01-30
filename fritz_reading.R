@@ -2,6 +2,8 @@ library(xlsx)
 library(ggplot2)
 library(dplyr)
 library(gridExtra)
+library(extrafont)
+#loadfonts(device = "win")
 
 #load data
 r_comp <- read.xlsx("data/all_reading.xlsx", sheetName = "all_reading")
@@ -54,7 +56,7 @@ p4 <- ggplot(r_years$`2018`, aes(x=day, y = minutes/60)) +
 #Average reading by Weekday
 p_avg <- ggplot(r_weekday_mean, aes(x = Weekday, y = `Avg. Minutes`)) +
   #scale_fill_brewer(palette = "Paired") +
-  geom_bar(stat = "identity", fill = "black") +
+  geom_bar(stat = "identity", fill = "#585858") +
   labs(title = "Average Minutes Read by Weekday | 2015 - 2018", 
        x = "Day of the Week", 
        y = "Average Minutes Read") +
@@ -63,14 +65,30 @@ p_avg <- ggplot(r_weekday_mean, aes(x = Weekday, y = `Avg. Minutes`)) +
 #Average reading by Month
 p_month_avg <- ggplot(r_month_mean, aes(x = Month, y = `Avg. Minutes`)) +
   #scale_fill_brewer(palette = "Paired") +
-  geom_bar(stat = "identity", fill = "black") +
+  geom_bar(stat = "identity", fill = fill_color) +
+  #geom_area(fill = fill_color) +
+  scale_y_reverse() +
   labs(title = "Average Minutes Read by Month | 2015 - 2018", 
        x = "Month", 
        y = "Average Minutes Read") +
   g_theme
 
+#Empty plot for text
+title_plot <- ggplot(r_month_mean, aes(x = Month, y = `Avg. Minutes`)) +
+  #scale_fill_brewer(palette = "Paired") +
+  geom_blank() +
+  labs(title = "The Reading
+Habits of
+Horror Writer
+K. Edwin Fritz",
+       subtitle = "2015 — 2018",
+       x = "Month", 
+       y = "Average Minutes Read") +
+  g_theme_title
+
+
 #arrange all plots
-final <- grid.arrange(p_month_avg, p_avg, p, p2, p3, p4, nrow = 3, ncol=2)
+final <- grid.arrange(title_plot, p_month_avg, p, p2, p3, p4, nrow = 3, ncol=2)
 
 ggsave("inprogress.png", final , width = 24, height = 30, dpi = 300)
 
