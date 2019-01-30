@@ -3,6 +3,7 @@ library(ggplot2)
 library(dplyr)
 library(gridExtra)
 library(extrafont)
+library(tidyverse)
 #loadfonts(device = "win")
 
 #load data
@@ -74,21 +75,28 @@ p_month_avg <- ggplot(r_month_mean, aes(x = Month, y = `Avg. Minutes`)) +
   g_theme
 
 #Empty plot for text
+text = paste("Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Nulla et sapien semper, hendrerit metus a, consequat est. Interdum et malesuada 
+fames ac ante ipsum primis in faucibus. Nam imperdiet, neque in aliquam tempor, 
+sem ante consectetur urna, eu hendrerit leo arcu sed mauris. Aenean blandit pretium facilisis. Suspendisse est sem, sagittis in malesuada in, 
+aliquam vel nisl. In efficitur ex arcu, sed tempor libero malesuada ut. Etiam laoreet, velit at facilisis dapibus, velit arcu finibus justo, 
+non consequat lorem quam et sapien. Maecenas vitae iaculis metus. Ut bibendum, justo non 
+vehicula vulputate, nibh ligula maximus ante, in accumsan augue risus bibendum justo.\n")
 title_plot <- ggplot(r_month_mean, aes(x = Month, y = `Avg. Minutes`)) +
   #scale_fill_brewer(palette = "Paired") +
   geom_blank() +
-  labs(title = "The Reading
-Habits of
-Horror Writer
+  annotate("text", x = 0, y = 55, size=4, label = text, adj=0, family = "Roboto Condensed Light") + 
+  labs(title = "The Reading Habits
+of Horror Writer
 K. Edwin Fritz",
-       subtitle = "2015 — 2018",
+       subtitle = "Daily Hours of Reading, 2015 — 2018",
        x = "Month", 
        y = "Average Minutes Read") +
-  g_theme_title
+    g_theme_title
 
 
 #arrange all plots
-final <- grid.arrange(title_plot, p_month_avg, p, p2, p3, p4, nrow = 3, ncol=2)
+final <- grid.arrange(title_plot, p, p2, p3, p4, nrow = 5, ncol=1)
 
-ggsave("inprogress.png", final , width = 24, height = 30, dpi = 300)
+ggsave("inprogress.png", final , width = 12, height = 35, dpi = 300, limitsize = FALSE)
 
