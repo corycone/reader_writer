@@ -2,9 +2,14 @@ library(xlsx)
 library(ggplot2)
 library(dplyr)
 library(gridExtra)
-library(extrafont)
 library(tidyverse)
-#loadfonts(device = "win")
+#the below commented code is for importing the Google Font Roboto Condensed Light after it has been installed locally
+#library(extrafont) #For first time run
+#font_import #for first time run (take a long time to run)  
+#loadfonts(device = "win") #for first time run
+
+
+
 
 #load data
 r_comp <- read.xlsx("data/all_reading.xlsx", sheetName = "all_reading")
@@ -20,7 +25,7 @@ p <- ggplot(r_years$`2015`, aes(x=day, y = minutes/60)) +
   labs(title = "2015",
        x = "Day of the Month", 
        y = "Hours") +
-  g_theme
+  g_theme + coord_cartesian(ylim=c(0, 3))
 
 #2016 Reading  
 p2 <- ggplot(r_years$`2016`, aes(x=day, y = minutes/60)) +
@@ -30,7 +35,7 @@ p2 <- ggplot(r_years$`2016`, aes(x=day, y = minutes/60)) +
   labs(title = "2016", 
        x = "Day of the Month", 
        y = "Hours") +
-  g_theme 
+  g_theme + coord_cartesian(ylim=c(0, 3))
 
 #2017 Reading
 p3 <- ggplot(r_years$`2017`, aes(x=day, y = minutes/60)) +
@@ -40,7 +45,7 @@ p3 <- ggplot(r_years$`2017`, aes(x=day, y = minutes/60)) +
   labs(title = "2017", 
        x = "Day of the Month", 
        y = "Hours") +
-  g_theme
+  g_theme + coord_cartesian(ylim=c(0, 3))
 
 #2018 Reading
 p4 <- ggplot(r_years$`2018`, aes(x=day, y = minutes/60)) +
@@ -52,7 +57,7 @@ p4 <- ggplot(r_years$`2018`, aes(x=day, y = minutes/60)) +
        y = "Hours",
        caption = "Source: K. Edwin Fritz, www.fritzfiction.com
        Graphic: Cory Cone, dataviz.corycone.com") +
-  g_theme
+  g_theme + coord_cartesian(ylim=c(0, 3))
 
 #Average reading by Weekday
 p_avg <- ggplot(r_weekday_mean, aes(x = Weekday, y = `Avg. Minutes`)) +
@@ -94,6 +99,16 @@ K. Edwin Fritz",
        y = "Average Minutes Read") +
     g_theme_title
 
+#how to read these plots, plot
+example <- ggplot(july_2018, aes(x=day, y = minutes/60)) +
+  geom_area(fill = fill_color) +
+  scale_y_reverse() +
+  facet_wrap(~facet, strip.position = "top") +
+  labs(title = "Guide", 
+       x = "Day of the Month", 
+       y = "Hours") +
+  scale_x_continuous(breaks = july_2018$day) +
+  g_theme_example
 
 #arrange all plots
 final <- grid.arrange(title_plot, p, p2, p3, p4, nrow = 5, ncol=1)
