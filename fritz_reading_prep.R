@@ -1,8 +1,5 @@
-#font
-
-
 #colors
-fill_color <- "#660000"
+fill_color <- "#CC0000"
 color_color <- "darkred"
 text_color <- "#161616"
 
