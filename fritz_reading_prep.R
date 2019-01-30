@@ -2,7 +2,7 @@
 
 
 #colors
-fill_color <- "red"
+fill_color <- "#660000"
 color_color <- "darkred"
 text_color <- "#161616"
 
