@@ -112,7 +112,7 @@ example <- ggplot(july_2018, aes(x=day, y = minutes/60)) +
   g_theme_example
 
 #arrange all plots
-final <- grid.arrange(title_plot, p, p2, p3, p4, nrow = 5, ncol=1)
+final <- grid.arrange(title_plot, p, p2, p3, p4, animate(anim2, fps = 30, duration = 4), nrow = 6, ncol=1)
 
 ggsave("inprogress.png", final , width = 12, height = 35, dpi = 300, limitsize = FALSE)
 

@@ -27,5 +27,5 @@ anim2 <- ggplot(r_years$`2018`, aes(x=day, y = minutes/60)) +
   g_theme + coord_cartesian(ylim=c(0, 3)) +
   transition_reveal(minutes, keep_last = TRUE)
 
-animate(anim2, fps = 30, duration = 4)  
+animate(anim2, fps = 30, duration = 4, renderer = gifski_renderer(loop = FALSE))  
 
