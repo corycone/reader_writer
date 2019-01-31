@@ -1,3 +1,8 @@
+#colors
+fill_color <- "#CC0000"
+color_color <- "darkred"
+text_color <- "#161616"
+
 #order by month
 r_comp[is.na(r_comp)] <- 0
 r_comp$facet = factor(r_comp$Month, 
@@ -34,14 +39,63 @@ r_month_mean$`Avg. Minutes` = round(r_month_mean$`Avg. Minutes`, digits = 2)
 
 g_theme <- theme_light() +
   theme(panel.border = element_blank(),
-        panel.background = element_rect(fill = "#F3F7F7"),
-        plot.background = element_rect(fill = "#F3F7F7", colour = "#F3F7F7"),
+        panel.background = element_rect(fill = "#DDDDDD"),
+        plot.background = element_rect(fill = "#DDDDDD", colour = "#DDDDDD"),
         axis.ticks.x = element_blank(),
         axis.ticks.y = element_blank(),
         panel.grid = element_blank(),
+        axis.text.x = element_blank(),#element_text(colour = text_color, family = "Roboto Condensed Light"),
+        axis.text.y = element_text(colour = fill_color, family = "Roboto Condensed Light"),
+        axis.title.x = element_blank(),#element_text(colour = text_color, family = "Roboto Condensed Light"),
+        axis.title.y = element_blank(),#element_text(colour = text_color, family = "Roboto Condensed Light"),
+        plot.title = element_text(colour = text_color, size = 35, family = "Roboto Condensed Light"),
+        plot.caption = element_text(color = text_color),
         legend.position="none",
-        plot.margin = margin(1,1,1,1, "cm")) +
-  theme(strip.background =element_rect(fill="#F3F7F7")) +
-  theme(strip.text = element_text(colour = "black", size = 9)) +
-  scale_fill_brewer(palette = "Paired")
+        plot.margin = margin(.5,.5,.5,.5, "cm")) +
+  theme(strip.background =element_rect(fill="#DDDDDD")) +
+  theme(strip.text = element_text(colour = text_color, size = 9, family = "Roboto Condensed Light"))
+  
+
+#ggplot title them
+
+g_theme_title <- theme_light() +
+  theme(panel.border = element_blank(),
+        panel.background = element_rect(fill = "#DDDDDD"),
+        plot.background = element_rect(fill = "#DDDDDD", colour = "#DDDDDD"),
+        axis.ticks.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        panel.grid = element_blank(),
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        plot.title = element_text(colour = text_color, size = 75, family = "Roboto Condensed Light"),
+        plot.subtitle = element_text(colour = text_color, size = 25),
+        plot.caption = element_blank(),
+        legend.position="none",
+        plot.margin = margin(.5,.5,.5,.5, "cm")) +
+  theme(strip.background =element_rect(fill="#DDDDDD")) +
+  theme(strip.text = element_text(colour = text_color, size = 9, family = "Roboto Condensed Light")) 
+
+#ggplot example theme
+g_theme_example <- theme_light() +
+  theme(panel.border = element_blank(),
+        panel.background = element_rect(fill = "#DDDDDD"),
+        plot.background = element_rect(fill = "#DDDDDD", colour = "#DDDDDD"),
+        #axis.ticks.x = element_blank(),
+        #axis.ticks.y = element_blank(),
+        panel.grid = element_blank(),
+        axis.text.x = element_text(colour = text_color, family = "Roboto Condensed Light"),
+        axis.text.y = element_text(colour = text_color, family = "Roboto Condensed Light"),
+        axis.title.x = element_text(colour = text_color, family = "Roboto Condensed Light"),
+        axis.title.y = element_text(colour = text_color, family = "Roboto Condensed Light"),
+        plot.title = element_text(colour = text_color, size = 35, family = "Roboto Condensed Light"),
+        plot.caption = element_text(color = text_color),
+        legend.position="none",
+        plot.margin = margin(.5,.5,.5,.5, "cm")) +
+  theme(strip.background =element_rect(fill="#DDDDDD")) +
+  theme(strip.text = element_text(colour = text_color, size = 9, family = "Roboto Condensed Light"))
+
+#July 2018 for example plot
+july_2018 <- subset(r_years$`2018`, r_years$`2018`$Month == "July")
 

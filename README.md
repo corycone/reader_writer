@@ -3,6 +3,6 @@ Visualizations of a Horror Writer (not me)
 
 In progress. More details here when I have more done.
 
-font is D-DIN, https://www.fontsquirrel.com/fonts/d-din
+font is Roboto Condensed, https://fonts.google.com/specimen/Roboto+Condensed
 
 ![Reading Habits of K. Edwin Fritz](inprogress.png)
