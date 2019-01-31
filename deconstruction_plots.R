@@ -54,7 +54,8 @@ all_years_animated <- ggplot(r_comp, aes(x=day, y = minutes/60)) +
   facet_wrap(~facet, strip.position = "top") +
   labs(title = "The Reading Habits
 of Horror Writer
-       K. Edwin Fritz",
+K. Edwin Fritz
+       ",
        subtitle = "{closest_state}" ,
        x = "Month", 
        y = "Average Minutes Read") +
