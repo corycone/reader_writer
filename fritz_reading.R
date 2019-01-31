@@ -3,8 +3,9 @@ library(ggplot2)
 library(dplyr)
 library(gridExtra)
 library(tidyverse)
+library(plotly)
+library(extrafont)
 #the below commented code is for importing the Google Font Roboto Condensed Light after it has been installed locally
-#library(extrafont) #For first time run
 #font_import #for first time run (take a long time to run)  
 #loadfonts(device = "win") #for first time run
 
@@ -115,3 +116,7 @@ final <- grid.arrange(title_plot, p, p2, p3, p4, nrow = 5, ncol=1)
 
 ggsave("inprogress.png", final , width = 12, height = 35, dpi = 300, limitsize = FALSE)
 
+#p123 <- ggplotly(p2)
+#p1234 <- ggplotly(p)
+
+#subplot(p123, p1234)
