@@ -24,8 +24,8 @@ anim2 <- ggplot(r_years$`2018`, aes(x=day, y = minutes/60)) +
        y = "Hours",
        caption = "Source: K. Edwin Fritz, www.fritzfiction.com
        Graphic: Cory Cone, dataviz.corycone.com") +
-  g_theme + coord_cartesian(ylim=c(0, 3)) +
+  g_theme + #coord_cartesian(ylim=c(0, 3)) +
   transition_reveal(minutes, keep_last = TRUE)
 
-animate(anim2, fps = 30, duration = 4, renderer = gifski_renderer(loop = FALSE))  
+animate(anim2, fps = 30, duration = 6)  
 
