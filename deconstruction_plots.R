@@ -62,5 +62,5 @@ of Horror Writer
   g_a_theme_title +
   transition_states(Year) + ease_aes()
 
-animate(all_years_animated, fps = 30, duration = 10, ani.width= 1000, ani.height=1000, "test.gif")  
+animate(all_years_animated, fps = 30, duration = 10, width= 1000, height=1000, "test.gif")  
 
