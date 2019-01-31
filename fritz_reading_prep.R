@@ -77,6 +77,28 @@ g_theme_title <- theme_light() +
   theme(strip.background =element_rect(fill="#DDDDDD")) +
   theme(strip.text = element_text(colour = text_color, size = 9, family = "Roboto Condensed Light")) 
 
+#ggplot animation title them
+
+g_a_theme_title <- theme_light() +
+  theme(panel.border = element_blank(),
+        panel.background = element_rect(fill = "#DDDDDD"),
+        plot.background = element_rect(fill = "#DDDDDD", colour = "#DDDDDD"),
+        axis.ticks.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        panel.grid = element_blank(),
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        plot.title = element_text(colour = text_color, size = 30, family = "Roboto Condensed Light"),
+        plot.subtitle = element_text(colour = text_color, size = 20, hjust = 0.5),
+        plot.caption = element_blank(),
+        legend.position="none",
+        plot.margin = margin(.5,.5,.5,.5, "cm")) +
+  theme(strip.background =element_rect(fill="#DDDDDD")) +
+  theme(strip.text = element_text(colour = text_color, size = 9, family = "Roboto Condensed Light")) 
+
+
 #ggplot example theme
 g_theme_example <- theme_light() +
   theme(panel.border = element_blank(),

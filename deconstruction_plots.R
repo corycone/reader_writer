@@ -55,9 +55,11 @@ all_years_animated <- ggplot(r_comp, aes(x=day, y = minutes/60)) +
   labs(title = "The Reading Habits
 of Horror Writer
        K. Edwin Fritz",
-       subtitle = "Daily Hours of Reading, 2015 — 2018",
+       subtitle = "{closest_state}" ,
        x = "Month", 
        y = "Average Minutes Read") +
   theme_light() +
-  g_theme_title +
-  transition_states(Year)
+  g_a_theme_title +
+  transition_states(Year) + ease_aes()
+
+animate
