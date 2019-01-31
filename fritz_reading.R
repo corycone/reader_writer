@@ -3,12 +3,10 @@ library(ggplot2)
 library(dplyr)
 library(gridExtra)
 library(tidyverse)
+library(extrafont)
 #the below commented code is for importing the Google Font Roboto Condensed Light after it has been installed locally
-#library(extrafont) #For first time run
 #font_import #for first time run (take a long time to run)  
 #loadfonts(device = "win") #for first time run
-
-
 
 
 #load data
@@ -25,7 +23,7 @@ p <- ggplot(r_years$`2015`, aes(x=day, y = minutes/60)) +
   labs(title = "2015",
        x = "Day of the Month", 
        y = "Hours") +
-  g_theme + coord_cartesian(ylim=c(0, 3))
+  g_theme + coord_cartesian(ylim=c(0, 4))
 
 #2016 Reading  
 p2 <- ggplot(r_years$`2016`, aes(x=day, y = minutes/60)) +
@@ -35,7 +33,7 @@ p2 <- ggplot(r_years$`2016`, aes(x=day, y = minutes/60)) +
   labs(title = "2016", 
        x = "Day of the Month", 
        y = "Hours") +
-  g_theme + coord_cartesian(ylim=c(0, 3))
+  g_theme + coord_cartesian(ylim=c(0, 4))
 
 #2017 Reading
 p3 <- ggplot(r_years$`2017`, aes(x=day, y = minutes/60)) +
@@ -45,7 +43,7 @@ p3 <- ggplot(r_years$`2017`, aes(x=day, y = minutes/60)) +
   labs(title = "2017", 
        x = "Day of the Month", 
        y = "Hours") +
-  g_theme + coord_cartesian(ylim=c(0, 3))
+  g_theme + coord_cartesian(ylim=c(0, 4))
 
 #2018 Reading
 p4 <- ggplot(r_years$`2018`, aes(x=day, y = minutes/60)) +
@@ -57,7 +55,7 @@ p4 <- ggplot(r_years$`2018`, aes(x=day, y = minutes/60)) +
        y = "Hours",
        caption = "Source: K. Edwin Fritz, www.fritzfiction.com
        Graphic: Cory Cone, dataviz.corycone.com") +
-  g_theme + coord_cartesian(ylim=c(0, 3))
+  g_theme + coord_cartesian(ylim=c(0, 4))
 
 #Average reading by Weekday
 p_avg <- ggplot(r_weekday_mean, aes(x = Weekday, y = `Avg. Minutes`)) +
