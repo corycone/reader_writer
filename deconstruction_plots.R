@@ -52,15 +52,18 @@ all_years_animated <- ggplot(r_comp, aes(x=day, y = minutes/60)) +
   geom_area(fill = fill_color) +
   scale_y_reverse() +
   facet_wrap(~facet, strip.position = "top") +
-  labs(title = "The Reading Habits of Horror Writer
+  labs(title = "The Reading Habits 
+of Horror Writer
 K. Edwin Fritz
        ",
        subtitle = "{closest_state}" ,
        x = "Month", 
-       y = "Average Minutes Read") +
+       y = "Hours",
+       caption = "Source: K. Edwin Fritz, www.fritzfiction.com
+       Graphic: Cory Cone, dataviz.corycone.com") +
   theme_light() +
   g_a_theme_title +
-  transition_states(Year) + ease_aes()
+  transition_states(Year)
 
-animate(all_years_animated, fps = 30, duration = 10, width= 1000, height=1000, "test.gif")  
+animate(all_years_animated, fps = 30, duration = 10, width= 1000, height=800, "test.gif")  
 

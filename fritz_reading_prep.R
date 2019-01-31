@@ -87,16 +87,16 @@ g_a_theme_title <- theme_light() +
         axis.ticks.y = element_blank(),
         panel.grid = element_blank(),
         axis.text.x = element_blank(),#element_text(colour = text_color, family = "Roboto Condensed Light"),
-        axis.text.y = element_text(colour = fill_color, family = "Roboto Condensed Light"),
+        axis.text.y = element_text(colour = fill_color, family = "Roboto Condensed Light", size = 9),
         axis.title.x = element_blank(),#element_text(colour = text_color, family = "Roboto Condensed Light"),
-        axis.title.y = element_blank(),#element_text(colour = text_color, family = "Roboto Condensed Light"),
-        plot.title = element_text(colour = text_color, size = 45, family = "Roboto Condensed Light"),
-        plot.subtitle = element_text(colour = fill_color, size = 35, hjust = 0.5),
-        plot.caption = element_blank(),
+        axis.title.y = element_text(colour = text_color, family = "Roboto Condensed Light", size = 9),
+        plot.title = element_text(colour = text_color, size = 35, family = "Roboto Condensed Light"),
+        plot.subtitle = element_text(colour = fill_color, size = 45, hjust = 0.5),
+        plot.caption = element_text(colour = text_color, family = "Roboto Condensed Light", size = 6),
         legend.position="none",
-        plot.margin = margin(.5,.5,.5,.5, "cm")) +
+        plot.margin = margin(1,1,1,1, "cm")) +
   theme(strip.background =element_rect(fill="#DDDDDD")) +
-  theme(strip.text = element_text(colour = text_color, size = 9, family = "Roboto Condensed Light")) 
+  theme(strip.text = element_text(colour = text_color, size = 15, family = "Roboto Condensed Light")) 
 
 
 #ggplot example theme
