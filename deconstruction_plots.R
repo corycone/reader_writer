@@ -52,8 +52,7 @@ all_years_animated <- ggplot(r_comp, aes(x=day, y = minutes/60)) +
   geom_area(fill = fill_color) +
   scale_y_reverse() +
   facet_wrap(~facet, strip.position = "top") +
-  labs(title = "The Reading Habits
-of Horror Writer
+  labs(title = "The Reading Habits of Horror Writer
 K. Edwin Fritz
        ",
        subtitle = "{closest_state}" ,
