@@ -39,20 +39,20 @@ r_month_mean$`Avg. Minutes` = round(r_month_mean$`Avg. Minutes`, digits = 2)
 
 g_theme <- theme_light() +
   theme(panel.border = element_blank(),
-        panel.background = element_rect(fill = "#DDDDDD"),
-        plot.background = element_rect(fill = "#DDDDDD", colour = "#DDDDDD"),
+        panel.background = element_rect(fill = "#fbfaf8"), #"#DDDDDD"
+        plot.background = element_rect(fill = "#fbfaf8", colour = "#fbfaf8"),
         axis.ticks.x = element_blank(),
         axis.ticks.y = element_blank(),
         panel.grid = element_blank(),
         axis.text.x = element_blank(),#element_text(colour = text_color, family = "Roboto Condensed Light"),
         axis.text.y = element_text(colour = fill_color, family = "Roboto Condensed Light"),
         axis.title.x = element_blank(),#element_text(colour = text_color, family = "Roboto Condensed Light"),
-        axis.title.y = element_blank(),#element_text(colour = text_color, family = "Roboto Condensed Light"),
+        axis.title.y = element_text(colour = text_color, family = "Roboto Condensed Light"),
         plot.title = element_text(colour = text_color, size = 50, family = "Roboto Condensed Light"),
         plot.caption = element_text(color = text_color),
         legend.position="none",
         plot.margin = margin(.5,.5,.5,.5, "cm")) +
-  theme(strip.background =element_rect(fill="#DDDDDD")) +
+  theme(strip.background =element_rect(fill="#fbfaf8")) +
   theme(strip.text = element_text(colour = text_color, size = 9, family = "Roboto Condensed Light"))
   
 
@@ -60,8 +60,8 @@ g_theme <- theme_light() +
 
 g_theme_title <- theme_light() +
   theme(panel.border = element_blank(),
-        panel.background = element_rect(fill = "#DDDDDD"),
-        plot.background = element_rect(fill = "#DDDDDD", colour = "#DDDDDD"),
+        panel.background = element_rect(fill = "#fbfaf8"),
+        plot.background = element_rect(fill = "#fbfaf8", colour = "#fbfaf8"),
         axis.ticks.x = element_blank(),
         axis.ticks.y = element_blank(),
         panel.grid = element_blank(),
@@ -69,19 +69,20 @@ g_theme_title <- theme_light() +
         axis.text.y = element_blank(),
         axis.title.x = element_blank(),
         axis.title.y = element_blank(),
-        plot.title = element_text(colour = text_color, size = 75, family = "Roboto Condensed Light"),
-        plot.subtitle = element_text(colour = text_color, size = 25),
+        plot.title = element_text(colour = text_color, size = 100, family = "Roboto Condensed Light", vjust = -5),
+        plot.subtitle = element_text(colour = fill_color, face ="bold", size = 160, family = "Roboto Condensed Light", hjust = .45, vjust = 4),
         plot.caption = element_blank(),
         legend.position="none",
         plot.margin = margin(.5,.5,.5,.5, "cm")) +
-  theme(strip.background =element_rect(fill="#DDDDDD")) +
+  theme(strip.background =element_rect(fill="#fbfaf8")) +
   theme(strip.text = element_text(colour = text_color, size = 9, family = "Roboto Condensed Light")) 
+
 
 #ggplot example theme
 g_theme_example <- theme_light() +
   theme(panel.border = element_blank(),
-        panel.background = element_rect(fill = "#DDDDDD"),
-        plot.background = element_rect(fill = "#DDDDDD", colour = "#DDDDDD"),
+        panel.background = element_rect(fill = "#fbfaf8"),
+        plot.background = element_rect(fill = "#fbfaf8", colour = "#fbfaf8"),
         #axis.ticks.x = element_blank(),
         #axis.ticks.y = element_blank(),
         panel.grid = element_blank(),
@@ -93,7 +94,7 @@ g_theme_example <- theme_light() +
         plot.caption = element_text(color = text_color),
         legend.position="none",
         plot.margin = margin(.5,.5,.5,.5, "cm")) +
-  theme(strip.background =element_rect(fill="#DDDDDD")) +
+  theme(strip.background =element_rect(fill="#fbfaf8")) +
   theme(strip.text = element_text(colour = text_color, size = 9, family = "Roboto Condensed Light"))
 
 #July 2018 for example plot
