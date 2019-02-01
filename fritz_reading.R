@@ -7,6 +7,7 @@ library(gridExtra)
 library(tidyverse)
 library(extrafont)
 library(gganimate)
+library(cairoDevice)
 
 #the below commented code is for importing the Google Font Roboto Condensed Light after it has been installed locally
 #font_import #for first time run (take a long time to run)  
@@ -87,8 +88,7 @@ title_plot <- ggplot(july_2018, aes(x=day, y = minutes/60, width = 1)) +
   geom_blank() +
   scale_y_reverse() +
   #facet_wrap(~facet, strip.position = "top") +
-  labs(title = "The Reading
-Habits
+  labs(title = "The Reading Habits
 of Horror Writer
 K. Edwin Fritz",
       # subtitle = "K. Edwin Fritz",
@@ -113,5 +113,10 @@ example <- ggplot(july_2018, aes(x=day, y = minutes/60, width = 1)) +
 #arrange all plots
 final <- grid.arrange(title_plot, p, p2, p3, p4, nrow = 5, ncol=1)
 
-ggsave("inprogress.png", final , width = 12.5, height = 35, dpi = 120, limitsize = FALSE)
+# interesting || final2 <- plot_grid(title_plot, p, p2, p3, p4, nrow = 5, rel_heights = c(1, 1, 1, 1, 1))
+
+ggsave("inprogress_cairo.png", final , width = 20, height = 50, dpi = 120, limitsize = FALSE, device=Cairo_png)
+
+
+
 
