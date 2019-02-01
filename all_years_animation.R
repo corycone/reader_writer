@@ -7,6 +7,7 @@ library(gridExtra)
 library(tidyverse)
 library(extrafont)
 library(gganimate)
+library(cairoDevice)
 
 #load data
 r_comp <- read.xlsx("data/all_reading.xlsx", sheetName = "all_reading")
@@ -49,4 +50,5 @@ K. Edwin Fritz
   theme(strip.text = element_text(colour = text_color, size = 15, family = "Roboto Condensed Light")) + 
   transition_states(Year)
 
-animate(all_years_animated, fps = 30, duration = 4, width= 1000, height=800) 
+animate(all_years_animated, fps = 30, duration = 10, width= 1000, height=800)
+options(gganimate.dev_args = list(type = "cairo"))
