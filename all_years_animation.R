@@ -8,6 +8,7 @@ library(tidyverse)
 library(extrafont)
 library(gganimate)
 library(cairoDevice)
+options(gganimate.dev_args = list(type = "cairo"))
 
 #load data
 r_comp <- read.xlsx("data/all_reading.xlsx", sheetName = "all_reading")
@@ -42,7 +43,7 @@ K. Edwin Fritz
         axis.title.x = element_blank(),#element_text(colour = text_color, family = "Roboto Condensed Light"),
         axis.title.y = element_text(colour = text_color, family = "Roboto Condensed Light", size = 9),
         plot.title = element_text(colour = text_color, size = 50, family = "Roboto Condensed Light"),
-        plot.subtitle = element_text(colour = fill_color, face = "bold", size = 130, hjust = .8, vjust = 55),
+        plot.subtitle = element_text(colour = fill_color, face = "bold", size = 100, hjust = .8, vjust = 55),
         plot.caption = element_text(colour = text_color, family = "Roboto Condensed Light", size = 6),
         legend.position="none",
         plot.margin = margin(1,1,1,1, "cm")) +
@@ -51,4 +52,4 @@ K. Edwin Fritz
   transition_states(Year)
 
 animate(all_years_animated, fps = 30, duration = 10, width= 1000, height=800)
-options(gganimate.dev_args = list(type = "cairo"))
+
