@@ -1,9 +1,13 @@
+#load libraries
+
 library(xlsx)
 library(ggplot2)
 library(dplyr)
 library(gridExtra)
 library(tidyverse)
 library(extrafont)
+library(gganimate)
+
 #the below commented code is for importing the Google Font Roboto Condensed Light after it has been installed locally
 #font_import #for first time run (take a long time to run)  
 #loadfonts(device = "win") #for first time run
