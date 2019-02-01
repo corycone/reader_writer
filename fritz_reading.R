@@ -108,6 +108,8 @@ example <- ggplot(july_2018, aes(x=day, y = minutes/60)) +
   scale_x_continuous(breaks = july_2018$day) +
   g_theme_example
 
+
+
 #arrange all plots
 final <- grid.arrange(title_plot, p, p2, p3, p4, nrow = 5, ncol=1)
 
