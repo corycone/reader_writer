@@ -42,8 +42,8 @@ K. Edwin Fritz
         axis.text.y = element_text(colour = fill_color, family = "Roboto Condensed Light", size = 9),
         axis.title.x = element_blank(),#element_text(colour = text_color, family = "Roboto Condensed Light"),
         axis.title.y = element_text(colour = text_color, family = "Roboto Condensed Light", size = 9),
-        plot.title = element_text(colour = text_color, size = 50, family = "Roboto Condensed Light"),
-        plot.subtitle = element_text(colour = fill_color, face = "bold", size = 100, hjust = .8, vjust = 55),
+        plot.title = element_text(colour = text_color, size = 40, family = "Roboto Condensed Light"),
+        plot.subtitle = element_text(colour = fill_color, face = "bold", size = 25, hjust = 0, vjust = 0),
         plot.caption = element_text(colour = text_color, family = "Roboto Condensed Light", size = 6),
         legend.position="none",
         plot.margin = margin(1,1,1,1, "cm")) +
