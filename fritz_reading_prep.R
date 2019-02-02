@@ -49,7 +49,7 @@ g_theme <- theme_light() +
         axis.title.x = element_blank(),#element_text(colour = text_color, family = "Roboto Condensed Light"),
         axis.title.y = element_text(colour = text_color, family = "Roboto Condensed Light"),
         plot.title = element_text(colour = text_color, size = 50, family = "Roboto Condensed Light"),
-        plot.caption = element_text(color = text_color),
+        plot.caption = element_text(color = text_color, size = 9),
         legend.position="none",
         plot.margin = margin(.5,.5,.5,.5, "cm")) +
   theme(strip.background =element_rect(fill="#fbfaf8")) +
