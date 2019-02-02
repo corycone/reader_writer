@@ -42,8 +42,8 @@ K. Edwin Fritz
         axis.text.y = element_text(colour = fill_color, family = "Roboto Condensed Light", size = 9),
         axis.title.x = element_blank(),#element_text(colour = text_color, family = "Roboto Condensed Light"),
         axis.title.y = element_text(colour = text_color, family = "Roboto Condensed Light", size = 9),
-        plot.title = element_text(colour = text_color, size = 40, family = "Roboto Condensed Light"),
-        plot.subtitle = element_text(colour = fill_color, face = "bold", size = 40, hjust = 1, vjust = 15),
+        plot.title = element_text(colour = text_color, size = 40, family = "Roboto Condensed Light", hjust = 0),
+        plot.subtitle = element_text(colour = fill_color, face = "bold", size = 40, hjust = .9, vjust = 20),
         plot.caption = element_text(colour = text_color, family = "Roboto Condensed Light", size = 9),
         legend.position="none",
         plot.margin = margin(1,1,1,1, "cm")) +
@@ -51,5 +51,5 @@ K. Edwin Fritz
   theme(strip.text = element_text(colour = text_color, size = 15, family = "Roboto Condensed Light")) + 
   transition_states(Year)
 
-animate(all_years_animated, fps = 30, duration = 10, width= 1000, height=800)
+animate(all_years_animated, fps = 30, duration = 1, width= 1000, height=800)
 
