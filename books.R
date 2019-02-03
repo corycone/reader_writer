@@ -17,13 +17,14 @@ library(plotly)
 
 #load data
 books <- read.xlsx("data/books.xlsx", sheetName = "Sheet1")
-#test_2015_merge <- r_comp
-#merged <- merge(books, test_2015_merge, by = "Date", all = TRUE)
-#merged_years<- split(merge, as.factor(merge$Year))
+
+#left join book info
+joined_2015 <- r_years$`2015` %>% left_join(books)
+
 
 #plot for plotly
 
-pplotly1 <- ggplot(r_years$`2015`, aes(x=day, y = minutes/60)) +
+pplotly1 <- ggplot(joined_2015, aes(x=day, y = minutes/60)) +
   geom_density(stat = "identity", fill = fill_color, color = "#660000") +
   scale_y_reverse() +
   facet_wrap(~facet, strip.position = "top") +
@@ -34,6 +35,8 @@ pplotly1 <- ggplot(r_years$`2015`, aes(x=day, y = minutes/60)) +
 
 ggplotly(pplotly1)
 # initital plotly
-mytext=paste("Date = ", r_years$`2015`$Date)    
-pp=plotly_build(pplotly1)   
-style( pplotly1, text=mytext, hoverinfo = "text")
+mytext=paste("Date = ", joined_2015$Date, 
+             "Finished Reading = ", joined_2015$Title.and.Author,
+             "Grade = ", joined_2015$Grade)    
+plotly_2015=plotly_build(pplotly1)   
+style( plotly_2015, text=mytext, hoverinfo = "text")
