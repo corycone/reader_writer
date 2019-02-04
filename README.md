@@ -4,7 +4,7 @@ fritz_reading.R -- This script generates the stacked plot chart of all four year
 
 all_years_animation.R -- This scripts generates the animated chart that transition between all years.
 
-deconstruction_plots.R -- This script produced the abstract/experimental plots related to this date.
+deconstruction_plots.R -- This script produced the abstract/experimental plots related to this data. (in progress)
 
 fritz_reading_prep.R -- This script is called from the other scripts for various data prep/repeatable code.
 
