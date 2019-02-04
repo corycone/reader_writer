@@ -109,7 +109,7 @@ g_theme_plotly <- theme_light() +
         axis.text.y = element_text(colour = fill_color, family = "Roboto Condensed Light"),
         axis.title.x = element_blank(),#element_text(colour = text_color, family = "Roboto Condensed Light"),
         axis.title.y = element_text(colour = text_color, family = "Roboto Condensed Light"),
-        plot.title = element_text(colour = text_color, size = 50, family = "Roboto Condensed Light"),
+        plot.title = element_text(colour = text_color, size = 25, family = "Roboto Condensed Light"),
         plot.caption = element_text(color = text_color, size = 9),
         legend.position="right",
         legend.title = element_blank(),

@@ -24,6 +24,12 @@ source("fritz_reading_prep.R")
 #left join book info
 joined_2015 <- r_years$`2015` %>% left_join(books)
 joined_2015_points <- r_years$`2015` %>% inner_join(books)
+joined_2016 <- r_years$`2016` %>% left_join(books)
+joined_2016_points <- r_years$`2016` %>% inner_join(books)
+joined_2017 <- r_years$`2017` %>% left_join(books)
+joined_2017_points <- r_years$`2017` %>% inner_join(books)
+joined_2018 <- r_years$`2018` %>% left_join(books)
+joined_2018_points <- r_years$`2018` %>% inner_join(books)
 
 
 #plot for plotly
@@ -31,17 +37,69 @@ book = joined_2015_points$Title.and.Author
 
 pplotly1 <- ggplot(joined_2015, aes(x=day, y = minutes/60, label = Title.and.Author, label2 = Date)) + #, book = Title.and.Author, date = Date, grade = Grade)) +
   geom_density(data=joined_2015, stat = "identity", fill = fill_color, color = "#660000", aes(y=minutes/60)) +
-  geom_point(data=joined_2015_points, size = 3, alpha = .8, aes(x=day, y = minutes/60, color = joined_2015_points$Grade)) +
-  scale_color_brewer(palette = "Set2") +
-  #geom_point(data=joined_2015, aes(alpha = 1), color = "skyblue") +
+  geom_point(data=joined_2015_points, size = 3, alpha = .5, aes(x=day, y = minutes/60, color = joined_2015_points$Grade)) +
+  scale_color_brewer(palette = "Paired") +
   scale_y_reverse() +
   facet_wrap(~facet, strip.position = "top") +
-  labs(title = "2015",
+  labs(title = "Books Read & Graded by K. Edwin Fritz | 2015",
        x = "Day of the Month", 
-       y = "Hours") +
+       y = "Hours",
        caption = "Source: K. Edwin Fritz, www.fritzfiction.com
-       Graphic: Cory Cone, dataviz.corycone.com" +
+       Graphic: Cory Cone, dataviz.corycone.com") +
   g_theme_plotly
 
-ggplotly(pplotly1, tooltip = (c("label", "label2", "label3")))
 
+pplotly2 <- ggplot(joined_2016, aes(x=day, y = minutes/60, label = Title.and.Author, label2 = Date)) + #, book = Title.and.Author, date = Date, grade = Grade)) +
+  geom_density(data=joined_2016, stat = "identity", fill = fill_color, color = "#660000", aes(y=minutes/60)) +
+  geom_point(data=joined_2016_points, size = 3, alpha = .5, aes(x=day, y = minutes/60, color = joined_2016_points$Grade)) +
+  scale_color_brewer(palette = "Paired") +
+  scale_y_reverse() +
+  facet_wrap(~facet, strip.position = "top") +
+  labs(title = "Books Read & Graded by K. Edwin Fritz | 2016",
+       x = "Day of the Month", 
+       y = "Hours",
+       caption = "Source: K. Edwin Fritz, www.fritzfiction.com
+       Graphic: Cory Cone, dataviz.corycone.com") +
+  g_theme_plotly
+
+
+pplotly3 <- ggplot(joined_2017, aes(x=day, y = minutes/60, label = Title.and.Author, label2 = Date)) + #, book = Title.and.Author, date = Date, grade = Grade)) +
+  geom_density(data=joined_2017, stat = "identity", fill = fill_color, color = "#660000", aes(y=minutes/60)) +
+  geom_point(data=joined_2017_points, size = 3, alpha = .5, aes(x=day, y = minutes/60, color = joined_2017_points$Grade)) +
+  scale_color_brewer(palette = "Paired") +
+  scale_y_reverse() +
+  facet_wrap(~facet, strip.position = "top") +
+  labs(title = "Books Read & Graded by K. Edwin Fritz | 2017",
+       x = "Day of the Month", 
+       y = "Hours",
+       caption = "Source: K. Edwin Fritz, www.fritzfiction.com
+       Graphic: Cory Cone, dataviz.corycone.com") +
+  g_theme_plotly
+
+
+pplotly4 <- ggplot(joined_2018, aes(x=day, y = minutes/60, label = Title.and.Author, label2 = Date)) + #, book = Title.and.Author, date = Date, grade = Grade)) +
+  geom_density(data=joined_2018, stat = "identity", fill = fill_color, color = "#660000", aes(y=minutes/60)) +
+  geom_point(data=joined_2018_points, size = 3, alpha = .5, aes(x=day, y = minutes/60, color = joined_2018_points$Grade)) +
+  scale_color_brewer(palette = "Paired") +
+  scale_y_reverse() +
+  facet_wrap(~facet, strip.position = "top") +
+  labs(title = "Books Read & Graded by K. Edwin Fritz | 2018",
+       x = "Day of the Month", 
+       y = "Hours",
+       caption = "Source: K. Edwin Fritz, www.fritzfiction.com
+       Graphic: Cory Cone, dataviz.corycone.com") +
+  g_theme_plotly
+
+
+p_fritz_2015 <- ggplotly(pplotly1, tooltip = (c("label", "label2", "label3")))
+p_fritz_2016 <- ggplotly(pplotly2, tooltip = (c("label", "label2", "label3")))
+p_fritz_2017 <- ggplotly(pplotly3, tooltip = (c("label", "label2", "label3")))
+p_fritz_2018 <- ggplotly(pplotly4, tooltip = (c("label", "label2", "label3")))
+
+p_fritz_2015
+p_fritz_2016
+p_fritz_2017
+p_fritz_2018
+
+#send to plotly
+api_create(p_fritz_2018, filename = "books-read-fritz-2018")
