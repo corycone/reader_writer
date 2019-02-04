@@ -6,11 +6,15 @@ deconstruction_plots.R -- This script produced the abstract/experimental plots r
 
 fritz_reading_prep.R -- This script is called from the other scripts for various data prep/repeatable code.
 
+books.R code for ggplotly graphs. 
+[2018](https://plot.ly/~ccone/1/#/), [2017](https://plot.ly/~ccone/3/#/), [2016](https://plot.ly/~ccone/5/#/), [2015](https://plot.ly/~ccone/7/#/), though these don't look very good on mobile.
+
 # reader_writer
 Visualizations of a Horror Writer (not me)
 
-In progress. More details here when I have more done.
+In progress.
 
 font is Roboto Condensed, https://fonts.google.com/specimen/Roboto+Condensed
 
+![Reading Habits of K. Edwin Fritz](animated_fritz.gif)
 ![Reading Habits of K. Edwin Fritz](fritz_reading_screen_Cropped.png)
