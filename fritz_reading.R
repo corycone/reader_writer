@@ -115,7 +115,9 @@ final <- grid.arrange(title_plot, p, p2, p3, p4, nrow = 5, ncol=1)
 
 # interesting || final2 <- plot_grid(title_plot, p, p2, p3, p4, nrow = 5, rel_heights = c(1, 1, 1, 1, 1))
 
-ggsave("inprogress_cairo.png", final , width = 20, height = 50, dpi = 120, limitsize = FALSE, device=Cairo_png)
+ggsave("fritz_reading_screen.png", final , width = 18, height = 45, dpi = 72, limitsize = FALSE, device=Cair co_png)
+
+#note: I crop them empty space at the top in Photoshop, because try as I might, I can't get rid of it here
 
 
 

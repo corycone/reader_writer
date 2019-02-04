@@ -69,7 +69,7 @@ g_theme_title <- theme_light() +
         axis.text.y = element_blank(),
         axis.title.x = element_blank(),
         axis.title.y = element_blank(),
-        plot.title = element_text(colour = text_color, size = 80, family = "Roboto Condensed Light", vjust = -75),
+        plot.title = element_text(colour = text_color, size = 80, family = "Roboto Condensed Light", vjust = -100),
         plot.subtitle = element_text(colour = fill_color, face ="bold", size = 160, family = "Roboto Condensed Light", hjust = .45, vjust = 4),
         plot.caption = element_blank(),
         legend.position="none",
