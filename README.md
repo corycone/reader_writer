@@ -9,12 +9,10 @@ fritz_reading_prep.R -- This script is called from the other scripts for various
 books.R code for ggplotly graphs. 
 [2018](https://plot.ly/~ccone/1/#/), [2017](https://plot.ly/~ccone/3/#/), [2016](https://plot.ly/~ccone/5/#/), [2015](https://plot.ly/~ccone/7/#/), though these don't look very good on mobile.
 
-# reader_writer
-Visualizations of a Horror Writer (not me)
-
-In progress.
+# Reading Habits of Horror Writer K. Edwin Fritz Visualizations
 
 font is Roboto Condensed, https://fonts.google.com/specimen/Roboto+Condensed
-
+# Animated
 ![Reading Habits of K. Edwin Fritz](animated_fritz.gif)
+# Static Image
 ![Reading Habits of K. Edwin Fritz](fritz_reading_screen_Cropped.png)
