@@ -97,6 +97,28 @@ g_theme_example <- theme_light() +
   theme(strip.background =element_rect(fill="#fbfaf8")) +
   theme(strip.text = element_text(colour = text_color, size = 9, family = "Roboto Condensed Light"))
 
+#plotly_theme
+g_theme_plotly <- theme_light() +
+  theme(panel.border = element_blank(),
+        panel.background = element_rect(fill = "#fbfaf8"), #"#DDDDDD"
+        plot.background = element_rect(fill = "#fbfaf8", colour = "#fbfaf8"),
+        axis.ticks.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        panel.grid = element_blank(),
+        axis.text.x = element_blank(),#element_text(colour = text_color, family = "Roboto Condensed Light"),
+        axis.text.y = element_text(colour = fill_color, family = "Roboto Condensed Light"),
+        axis.title.x = element_blank(),#element_text(colour = text_color, family = "Roboto Condensed Light"),
+        axis.title.y = element_text(colour = text_color, family = "Roboto Condensed Light"),
+        plot.title = element_text(colour = text_color, size = 50, family = "Roboto Condensed Light"),
+        plot.caption = element_text(color = text_color, size = 9),
+        legend.position="right",
+        legend.title = element_blank(),
+        plot.margin = margin(.5,.5,.5,.5, "cm")) +
+  theme(strip.background =element_rect(fill="#fbfaf8")) +
+  theme(strip.text = element_text(colour = text_color, size = 9, family = "Roboto Condensed Light"))
+
+
+
 #July 2018 for example plot
 july_2018 <- subset(r_years$`2018`, r_years$`2018`$Month == "July")
 
