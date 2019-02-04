@@ -103,3 +103,6 @@ p_fritz_2018
 
 #send to plotly
 api_create(p_fritz_2018, filename = "books-read-fritz-2018")
+api_create(p_fritz_2017, filename = "books-read-fritz-2017")
+api_create(p_fritz_2016, filename = "books-read-fritz-2016")
+api_create(p_fritz_2015, filename = "books-read-fritz-2015")
