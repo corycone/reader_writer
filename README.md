@@ -13,4 +13,4 @@ In progress. More details here when I have more done.
 
 font is Roboto Condensed, https://fonts.google.com/specimen/Roboto+Condensed
 
-![Reading Habits of K. Edwin Fritz](fritz_reading_screen.png.png)
+![Reading Habits of K. Edwin Fritz](fritz_reading_screen_cropped.png)
