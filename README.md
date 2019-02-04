@@ -1,3 +1,5 @@
+# The Reading Habits of Horror Writer K. Edwin Fritz
+
 fritz_reading.R -- This script generates the stacked plot chart of all four years of K. Edwin Fritz reading data
 
 all_years_animation.R -- This scripts generates the animated chart that transition between all years.
@@ -8,8 +10,6 @@ fritz_reading_prep.R -- This script is called from the other scripts for various
 
 books.R code for ggplotly graphs. 
 [2018](https://plot.ly/~ccone/1/#/), [2017](https://plot.ly/~ccone/3/#/), [2016](https://plot.ly/~ccone/5/#/), [2015](https://plot.ly/~ccone/7/#/), though these don't look very good on mobile.
-
-# Reading Habits of Horror Writer K. Edwin Fritz Visualizations
 
 font is Roboto Condensed, https://fonts.google.com/specimen/Roboto+Condensed
 # Animated
